@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<head>
+    <title>Stop Watch</title>
+    <h3>Stop Watch</h3>
+    <script>
+        let arr=[]
+        let interval
+        let cnt = 0
+        function start(){
+            interval = setInterval(()=>{
+            cnt++
+            document.getElementById("1").innerHTML=cnt
+        },1000);
+        }
+        function stop(){
+            clearInterval(interval)
+        }
+        function reset() {
+           stop()
+            cnt=0
+            document.getElementById("1").innerHTML= cnt
+            arr=[]
+        }
+        function array() {
+            // stop()
+             arr.push(cnt)
+            // console.log(array);
+            document.getElementById("4").innerHTML =arr
+         //   reset()
+        }
+        function reverse(){
+            let tim=document.getElementById("t1").value
+            cnt=tim
+            interval = setInterval(()=>{
+            cnt--
+            if(cnt!==-1){
+                document.getElementById("1").innerHTML=cnt
+        }else{
+            stop()
+        } },1000);
+        }
+    </script>
+</head>
+<body>
+    <input type="button" onclick="start()" value="start"/>
+    <p id="1" > 0 </p>
+    <input type="button" onclick="stop()" value="stop" />
+    <input type="button" onclick="reset()" value="Reset" />
+    <input type="button" onclick="array()" value="Store" />
+    <p id="4"></p>
+    enter in second:<input type="number"  value="set limit" id="t1">
+    <input type="button" onclick="reverse()" value="SetTimer" /> 
+</body>
+</html>

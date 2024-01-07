@@ -1,0 +1,61 @@
+<html>
+    <head>
+        <title>Currency Convereter</title>
+        <h3>Currency Convereter</h3>
+        <script>
+            function calculate()
+            {
+                let num1 = parseInt(document.getElementById("Amount").value);
+                let curr1 =  document.getElementById("curr1").value;
+                let curr2 =  document.getElementById("curr2").value;
+                let result;
+                switch(curr1)
+                    {
+                        case '₹':  switch(curr2)
+                                    {   case '₹': result = 1*num1    ;break;
+                                        case '£': result = 0.011*num1;break;
+                                        case '$': result = 0.012*num1;break;
+                                        case '0': result = 0*num1    ;break;
+                                    };break;
+
+                        case '£': switch(curr2)
+                                    {   case '₹': result = 89.88*num1;break;
+                                        case '£': result = 1*num1    ;break;
+                                        case '$': result = 1.08*num1 ;break;
+                                        case '0': result = 0*num1    ;break;
+                                    };break;
+
+                        case '$': switch(curr2)
+                                    {   case '₹': result = 83.43*num1;break;
+                                        case '£': result = 0.80*num1 ;break;
+                                        case '$': result = 1*num1    ;break;
+                                        case '0': result = 0*num1    ;break;
+                                    };break;
+
+                        case '0': result = 0;break;
+                    }
+                document.getElementById("Ans").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body><br>
+        Enter Amount : <input type="number" id="Amount"><br><br>
+        To Convert From :
+        <Select id="curr1">
+            <option value="0">Select Currency</option>
+            <option value="₹">Rupees (₹)</option>
+            <option value="£">Pounds (£)</option>
+            <option value="$">Dollar ($)</option>
+        </Select><br><br>
+        Convert To:
+        <Select id="curr2">
+            <option value="0">Select Currency</option>
+            <option value="₹">Rupees (₹)</option>
+            <option value="£">Pounds (£)</option>
+            <option value="$">Dollar ($)</option>
+        </Select><br><br>
+        <button type="submit" onclick="calculate()">Calculate</button><br><br>
+       
+        Result : <p id="Ans"></p>
+    </body>
+</html>

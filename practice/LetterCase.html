@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Letter Case</title>
+        <h3>Letter Case</h3>
+        <script>
+            function changeCase()
+            {
+                let str = document.getElementById("str").value;
+                let op =  document.getElementById("case").value;
+                let result = "";
+                switch(op)
+                    {
+                        case 'up':  result = "";
+                                    result = str.toUpperCase();
+                                    break;
+                        case 'low': result = "";
+                                    result = str.toLowerCase();
+                                    break;
+                        case 'title': result = "";
+                                      result = (str.charAt(0)).toUpperCase() + (str.substr(1)).toLowerCase();
+                                      break;
+                        case 'camel': const temp = str.split(" ");
+                                      result = "";
+                                        temp.forEach(element => {
+                                            result = result + (element.charAt(0)).toUpperCase() + (element.substr(1)).toLowerCase()+" ";
+                                        });
+                                      break;
+                    }
+                document.getElementById("Ans").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body><br>
+        Enter String : <input type="text" id="str"><br><br>
+        Select Case :
+        <Select id="case">
+            <option value="none">Select Case</option>
+            <option value="up">Upper Case</option>
+            <option value="low">Lower Case</option>
+            <option value="title">Title Case</option>
+            <option value="camel">Camel Case</option>
+        </Select><br><br>
+        <button type="submit" onclick="changeCase()">Change Case</button><br><br>
+        Result : 
+        <p id="Ans"></p>
+    </body>
+</html>

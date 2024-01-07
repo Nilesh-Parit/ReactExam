@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Array Functions</title>
+    <h3> Array Functions </h3>
+    <script>
+        let Arr = [];
+        function add()
+        {
+            let num = parseInt(document.getElementById("num").value);
+            Arr.push(num);
+            document.getElementById("arr").innerHTML=Arr;
+
+            Arr.sort();
+            console.log(Arr);
+            document.getElementById("asc").innerHTML=Arr;
+
+            Arr.reverse();
+            console.log(Arr);
+            document.getElementById("dsc").innerHTML=Arr;
+        }
+    </script>
+</head>
+<body>
+    Enter a Number : 
+    <input type="number" id="num" onblur="add()"><br><br>
+    Array [ ] : <div id="arr"></div><br>
+    Sorted Array(Asc) : <div id="asc"></div><br>
+    Sorted Array(Dsc) : <div id="dsc"></div><br>
+</body>
+</html>
