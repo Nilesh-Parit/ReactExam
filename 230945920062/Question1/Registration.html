@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <h2 Align="center">Registration Form</h2>
+    <script>
+        function display()
+        {
+            let Name = document.getElementById("name").value;
+            let DOB = document.getElementById("dob").value;
+            let Email = document.getElementById("email").value;
+
+            document.getElementById("nm").innerHTML = Name;
+            document.getElementById("db").innerHTML = DOB;
+            document.getElementById("el").innerHTML = Email;
+        }
+        function Clear()
+        {
+            document.getElementById("nm").innerHTML = "";
+            document.getElementById("db").innerHTML = "";
+            document.getElementById("el").innerHTML = "";
+        }
+    </script>
+</head>
+<body><br>
+    <fieldset Align="center"><br>
+        <legend Align="left">Personal Information</legend>
+        Name : <input type="text" id="name" placeholder="Enter Name" required><br><br>
+        DOB : <input type="date" id="dob" placeholder="Enter Date of Birth" min="1923-01-01" max="2015-01-01"><br><br>
+        Email : <input type="email" id="email" placeholder="Enter Mail ID"><br><br>
+
+        <button type="reset" onclick="Clear()">Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button type="submit" onclick="display()">Submit</button>
+    </fieldset><br><br>
+
+    <fieldset Align="center">
+        <legend Align="left">Valid Input :</legend><br>
+        Name :<div id="nm"></div><br>
+        DOB :<div id="db"></div><br>
+        Email :<div id="el"></div><br>
+    </fieldset>
+    
+</body>
+</html>

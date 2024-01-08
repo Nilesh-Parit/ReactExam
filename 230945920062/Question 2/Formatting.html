@@ -1,0 +1,41 @@
+<html>
+    <head>
+        <title>Formatting</title>
+        <h3>Text Formatting</h3>
+        <script src="./jquery-3.6.0.js"></script>
+        <script>
+            function format()
+            {
+                let text = document.getElementById("text").value;
+                let op =  document.getElementById("op").value
+                let result;
+                switch(op)
+                    {
+                        case 'b': result = "<b>Nilesh</b>";
+                                    break;
+                        case 'i': result = "<i>Nilesh</i>";
+                                    break;
+                        case 'u': result = "<u>Nilesh</u>";
+                                    break;
+                        case 'all': result = "<b><i><u>Nilesh</u></i></b>";
+                                    break;
+                    }
+                document.getElementById("Ans").innerHTML = result;
+            }
+        </script>
+    </head>
+    <body><br>
+        Enter Text : <input type="text" id="text"><br><br>
+        Select Operation :
+        <Select id="op">
+            <option value="none">Select One Operation</option>
+            <option value="b"><b>Bold</b></option>
+            <option value="i"><i>Italic</i></option>
+            <option value="u"><u>Underline</u></option>
+            <option value="all"><b><i><u>All</u></i></b></option>
+        </Select><br><br>
+        <button type="submit" onclick="format()">format</button><br><br>
+        Result : 
+        <p id="Ans"></p>
+    </body>
+</html>
